@@ -1,4 +1,6 @@
 import qrcode
+from pathlib import Path
+import get_unique_filename
 
 # asks user for URL input
 data = input("Paste in your URL to generate a QR code:")
@@ -18,8 +20,11 @@ qr.make(fit=True)
 # create an image from the QR code instance
 img = qr.make_image(fill='black', back_color='white')
 
+# check if the file already exists
+file_path = 'C:/Users/Reilly/Documents/Coding/QR generator/qrcode.png'
+unique_file_path = get_unique_filename.get_unique_filename(file_path)
+
 # save the image to a file
-img.save("qrcode.png")
+img.save(unique_file_path)
 
-print("QR code generated and saved as qrcode.png")
-
+print("QR code generated:", unique_file_path)
