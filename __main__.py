@@ -27,4 +27,4 @@ unique_file_path = get_unique_filename.get_unique_filename(file_path)
 # save the image to a file
 img.save(unique_file_path)
 
-print("QR code generated:", unique_file_path)
+print("QR code generated and saved as:", unique_file_path.stem)
