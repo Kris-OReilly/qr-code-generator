@@ -1,5 +1,6 @@
 import qrcode
 from pathlib import Path
+import os
 import get_unique_filename
 
 # asks user for URL input
@@ -28,3 +29,7 @@ unique_file_path = get_unique_filename.get_unique_filename(file_path)
 img.save(unique_file_path)
 
 print("QR code generated and saved as:", unique_file_path.stem)
+
+
+# Open the file in the default application
+os.startfile(unique_file_path)  # Works only on Windows
